@@ -19,8 +19,7 @@ namespace eTickets.Data.ViewModels
         [Required]
         [DataType(DataType.Password)]
         public string Password { get; set; }
-
-        [Display(Name = "Confirm password")]
+        [Display(Name = "Confirm password (Password size must be minimum 8, and it must have NonAlphanumeric, Digit and Upper characters)")]
         [Required(ErrorMessage = "Confirm password is required")]
         [DataType(DataType.Password)]
         [Compare("Password", ErrorMessage = "Passwords do not match")]
