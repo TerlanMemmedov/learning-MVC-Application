@@ -46,7 +46,7 @@ namespace eTickets.Controllers
 
             if (!string.IsNullOrEmpty(searchString))
             {
-                //in here the name or description need to contain anything, also it can be a letter (you can search with just 'f')
+                //in here the name or description need to contain anything, also it can be a letter (you can search with just 'f') //
                 var filteredMovie = allMovies.Where(m => m.Name.ToLower().Contains(searchString.ToLower()) || m.Description.ToLower().Contains(searchString.ToLower())).ToList();
 
 
