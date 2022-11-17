@@ -12,6 +12,8 @@ namespace eTickets.Data
 {
     public class AppDbInitializer
     {
+
+        //Creates new objects when there is nothing in the database
         public static void Seed(IApplicationBuilder applicationBuilder)
         {
             using (var serviceScope = applicationBuilder.ApplicationServices.CreateScope())

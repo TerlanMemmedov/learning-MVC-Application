@@ -87,6 +87,9 @@ namespace eTickets.Controllers
                 UserName = registerVM.EmailAddress
             };
 
+
+            //checkes the password, it is 8 size and have nonAlphaNumeric, digit and upperCase
+            //if there is no just one from above, return fail
             var responseCheck = await _userManager.CreateAsync(newUser, registerVM.Password);
 
             if (responseCheck.Succeeded)
