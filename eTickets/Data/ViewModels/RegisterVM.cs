@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace eTickets.Data.ViewModels
 {
+
+    //The input type for register (which is giving the model type when user going to register)
     public class RegisterVM
     {
         [Display(Name = "Full name")]
