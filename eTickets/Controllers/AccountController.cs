@@ -92,7 +92,11 @@ namespace eTickets.Controllers
             //if there is no just one from above, return fail
             var responseCheck = await _userManager.CreateAsync(newUser, registerVM.Password);
 
-            if (responseCheck.Succeeded)
+            if (!responseCheck.Succeeded)
+            {
+                return View(registerVM);
+            }
+            else if (responseCheck.Succeeded)
             {
                 await _userManager.AddToRoleAsync(newUser, UserRoles.User);
             }

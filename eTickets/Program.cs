@@ -36,6 +36,17 @@ builder.Services.AddScoped(sc => ShoppingCart.GetShoppingCart(sc));
 
 //Authentication and Authorization
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
+
+//Changed the required password settings
+builder.Services.Configure<IdentityOptions>(options =>
+{
+    //Changing default settings
+    options.Password.RequireDigit = false;
+    options.Password.RequireLowercase = false;
+    options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequireUppercase = false;
+    options.Password.RequiredLength = 8;
+});
 builder.Services.AddMemoryCache();
 builder.Services.AddSession();
 builder.Services.AddAuthentication(options =>
